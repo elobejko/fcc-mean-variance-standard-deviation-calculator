@@ -1,10 +1,12 @@
 import numpy as np
 
 def calculate(list):
-  if len(list) != 9:
-    return "List must contain nine numbers."
+  try:
+    lst = np.reshape(np.array(list), (3, 3))
+  except ValueError as ve:
+    print('List must contain nine numbers.')
+    return ve     
  
-  lst = np.reshape(np.array(list), (-1, 3))
   calculations = {}
  
   calculations['mean'] = [lst.mean(axis = 0).tolist(), lst.mean(axis = 1).tolist(), lst.mean()]
