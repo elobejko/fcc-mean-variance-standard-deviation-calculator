@@ -3,9 +3,8 @@ import numpy as np
 def calculate(list):
   try:
     lst = np.reshape(np.array(list), (3, 3))
-  except ValueError as ve:
-    print('List must contain nine numbers.')
-    return ve     
+  except: 
+    raise ValueError('List must contain nine numbers.')
  
   calculations = {}
  
